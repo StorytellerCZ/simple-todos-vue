@@ -98,7 +98,7 @@ export default {
       ).fetch();
     },
     incompleteCount() {
-      return TasksCollection.find({ isChecked: { $ne: true }, userId: this.currentUser._id }).count();
+      return TasksCollection.find({ isChecked: { $ne: true }, userId: this.currentUser?._id }).count();
     },
     currentUser() {
       return Meteor.user();
